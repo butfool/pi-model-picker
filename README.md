@@ -112,18 +112,17 @@ npm test               # drives the real TUI through a pty (requires uv)
 
 ## Releasing
 
-Publishing runs from GitHub Actions on a version tag. Create an npm automation token, store it as the `NPM_TOKEN` repository secret, then push a tag that matches `package.json`:
+Publishing runs on every push to `main`. The workflow publishes with npm trusted publishing (OIDC) and provenance, so no npm token is stored in the repository.
+
+A release only happens when `package.json` carries a version that is not on the registry yet. Bump the version and update the changelog in one commit:
 
 ```bash
-npm version patch
-git push --follow-tags
+npm version patch --no-git-tag-version
+git commit -am "release: v0.1.1"
+git push
 ```
 
-`.github/workflows/publish.yml` installs from the lockfile, runs the typecheck, and publishes with provenance. Manual publishing works the same way:
-
-```bash
-npm publish --access public
-```
+`npm version` rewrites `package.json` and the lockfile. Pushes with an already published version skip the publish step and finish green.
 
 ## License
 

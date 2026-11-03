@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.1.1] - 2026-11-03
+
+- Publish automatically on every push to `main` when the version is new, using npm trusted publishing with provenance.
+- Document the release flow in the README.
+
 ## [0.1.0] - 2026-11-03
 
 - Three-pane model picker: providers, models, and a model inspector.
