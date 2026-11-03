@@ -35,19 +35,19 @@ A three-pane model picker for the [Pi coding agent](https://pi.dev). Pick a prov
 ## Install
 
 ```bash
-pi install npm:@butfool/pi-model-picker
+pi install npm:@butcool/pi-model-picker
 ```
 
 Try it without touching your settings:
 
 ```bash
-pi -e npm:@butfool/pi-model-picker
+pi -e npm:@butcool/pi-model-picker
 ```
 
 Install into a project instead of your personal configuration:
 
 ```bash
-pi install npm:@butfool/pi-model-picker -l
+pi install npm:@butcool/pi-model-picker -l
 ```
 
 ## Usage

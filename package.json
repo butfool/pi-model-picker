@@ -1,5 +1,5 @@
 {
-  "name": "@butfool/pi-model-picker",
+  "name": "@butcool/pi-model-picker",
   "version": "0.1.0",
   "description": "Three-pane model picker for Pi: provider list, model list, and an inspector with per-model thinking levels",
   "type": "module",
