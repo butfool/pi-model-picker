@@ -110,6 +110,21 @@ npm test               # drives the real TUI through a pty (requires uv)
 
 `npm test` starts Pi inside a temporary agent directory, declares this package as a local package, opens `/model-ui`, and asserts what the renderer writes for configured, missing, and clamped thinking levels. It needs `pi` on `PATH` and a Unix pty (macOS or Linux).
 
+## Releasing
+
+Publishing runs from GitHub Actions on a version tag. Create an npm automation token, store it as the `NPM_TOKEN` repository secret, then push a tag that matches `package.json`:
+
+```bash
+npm version patch
+git push --follow-tags
+```
+
+`.github/workflows/publish.yml` installs from the lockfile, runs the typecheck, and publishes with provenance. Manual publishing works the same way:
+
+```bash
+npm publish --access public
+```
+
 ## License
 
 MIT
